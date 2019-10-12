@@ -1,10 +1,15 @@
 .toolbar {
   background-color: white;
   border-bottom: 1px solid gray;
+  .mat-toolbar-row {
+    height: 85px !important;
+    padding: 0 !important;
+  }
 }
 
 .btn-nav {
   letter-spacing: 2px;
+  font-size: 18px;
   color: #ff6200;
   &.active {
     border-bottom: 1px solid #ff6200;
@@ -17,7 +22,7 @@
 .logo {
   background: url("../assets/images/logo.png");
   background-size: cover;
-  height: 64px;
-  width: 270px;
-  padding: 0 20px;
+  height: 55px;
+  width: 260px;
+  margin: 0 40px 0 10%;
 }
