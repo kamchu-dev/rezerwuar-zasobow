@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { DashboardService } from './dashboard.service';
 
 export interface UserData {
   id: string;
@@ -33,7 +34,7 @@ export class DashboardComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor() {
+  constructor(private service: DashboardService) {
     // Create 100 users
     const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
@@ -42,6 +43,9 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.service.getResources().subscribe(() => {
+      console.log('ok');
+    });
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
