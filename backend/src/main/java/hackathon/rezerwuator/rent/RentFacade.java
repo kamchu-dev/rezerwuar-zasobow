@@ -60,4 +60,17 @@ public class RentFacade {
                 .collect(Collectors.toList());
     }
 
+    public List<RentDto> getRentedByUser(Long userId) {
+        return rentRepository.findAllByUserIdAndRentedIsTrue(userId)
+                .stream()
+                .map(entity -> new RentDto(
+                        entity.getId(),
+                        entity.getResourceCode(),
+                        entity.getUserId(),
+                        entity.getRentDate(),
+                        entity.getUntilDate(),
+                        entity.isRented()
+                ))
+                .collect(Collectors.toList());
+    }
 }
