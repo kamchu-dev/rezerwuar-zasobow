@@ -10,7 +10,7 @@ import {WishService} from "./wish.service";
 })
 export class WishListComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'url', 'price'];
+  displayedColumns: string[] = ['name', 'url', 'price', 'likes'];
   dataSource: MatTableDataSource<ResourceModel>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -24,6 +24,11 @@ export class WishListComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
+  }
+
+  onClickLike(code){
+    console.log("DSADJSAIDJSAIDJSAI");
+    this.service.addLike(code);
   }
 
 }

@@ -12,4 +12,5 @@ public class WishDto {
     String qr;
     String price;
     String url;
+    Integer likes;
 }

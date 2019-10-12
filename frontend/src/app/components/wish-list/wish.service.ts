@@ -1,28 +1,44 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ResourceModel } from '../../models/resource.model';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
-import { map } from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
+import {ResourceModel} from '../../models/resource.model';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
+import {map} from 'rxjs/operators';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class WishService {
 
-    private resourcesUrl: string = '/api/wish';
+  private resourcesUrl: string = '/api/wish';
+  private likesUrl: string = '/api/like';
 
-    constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient) {
 
-    }
+  }
 
-    public getResources(): Observable<ResourceModel[]> {
-        return this.httpClient
-                   .get(environment.serverPath + this.resourcesUrl)
-                   .pipe(
-                       map((res: any) => {
-                           return res;
-                       })
-                   );
-    }
+  public getResources(): Observable<ResourceModel[]> {
+    return this.httpClient
+      .get(environment.serverPath + this.resourcesUrl)
+      .pipe(
+        map((res: any) => {
+          return res;
+        })
+      );
+  }
+
+  public addLike(code: string): Observable<ResourceModel> {
+    let like =
+      {
+        "userId": 1,
+        "resourceCode": code
+      };
+    return this.httpClient
+      .post(environment.serverPath + this.likesUrl, like)
+      .pipe(
+        map((res: any) => {
+          return res.product;
+        })
+      );
+  }
 }

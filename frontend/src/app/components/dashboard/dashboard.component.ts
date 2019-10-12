@@ -12,7 +12,7 @@ import { ResourceModel } from '../../models/resource.model';
 })
 export class DashboardComponent implements OnInit {
 
-    displayedColumns: string[] = ['name', 'code'];
+    displayedColumns: string[] = ['name', 'code', 'likes'];
     dataSource: MatTableDataSource<ResourceModel>;
 
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -34,5 +34,8 @@ export class DashboardComponent implements OnInit {
         if (this.dataSource.paginator) {
             this.dataSource.paginator.firstPage();
         }
+    }
+    onClickLike(){
+
     }
 }
