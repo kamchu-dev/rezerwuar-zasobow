@@ -37,9 +37,9 @@ public class ResourceConfig {
         resourceDtos.add(new ResourceDto("Dubiel",
                 "Najlepszy tester i QA",
                 "1234567890128", "1234567890128",Arrays.asList("Gruby"), false));
-        resourceDtos.add(new ResourceDto("szesc",
-                "Najlepszy tester i QA",
-                "1234567890144", "1234567890128",Arrays.asList("szesc"), false));
+        resourceDtos.add(new ResourceDto("Angular2",
+                "Książka o angularze",
+                "1232267890128", "6788512336384",Arrays.asList("Angular"), false));
         resourceDtos.forEach( resource -> resourceFacade.addResource(resource.getName(), resource.getDescription(), resource.getQr(),resource.getTags()));
 
         return resourceFacade;
