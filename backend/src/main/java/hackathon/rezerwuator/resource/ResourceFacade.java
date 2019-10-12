@@ -52,7 +52,7 @@ public class ResourceFacade {
     }
 
     public String addResource(String name, String description, String qr, String tags){
-        Resource resource = new Resource(name, description, UUID.randomUUID().toString(), qr, tags);
+        Resource resource = new Resource(name, description,tags, UUID.randomUUID().toString(), qr);
         repository.save(resource);
         return resource.getCode();
     }
