@@ -15,13 +15,13 @@ public class WishConfig {
     WishFacade getWishFacade(WishRepository repository, LikesFacade likesFacade) {
         WishFacade wishFacade = new WishFacade(repository, likesFacade);
         ArrayList<WishDto> resourceDtos = new ArrayList<>();
-        resourceDtos.add(new WishDto("Żemeł Jest Super",
+        resourceDtos.add(new WishDto("Wysyłanie maili",
                 "Wcale tego sam nie napisał",
                 UUID.randomUUID().toString(), UUID.randomUUID().toString(), "113.50 $", "https://www.amazon.com/Java-Dummies-Computers-Barry-Burd/dp/1119175690", 5, true));
-        resourceDtos.add(new WishDto("Somsiedzi",
+        resourceDtos.add(new WishDto("Zdjęcia gdzie został zostawiony zasób",
                 "miejsce 4 jest pewne",
                 UUID.randomUUID().toString(), UUID.randomUUID().toString(), "113.50 $", "https://www.amazon.com/Java-Dummies-Computers-Barry-Burd/dp/1119175690",5, true));
-        resourceDtos.add(new WishDto("Nowa książka somsiada",
+        resourceDtos.add(new WishDto("Informacje przez kogo zasób jest zajęty",
                 "Ciekawe skąd miał pieniążki",
                 UUID.randomUUID().toString(), UUID.randomUUID().toString(), "113.50 $", "https://www.amazon.com/Java-Dummies-Computers-Barry-Burd/dp/1119175690", 5, true));
 
