@@ -13,6 +13,10 @@ export class ScannerComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.dialogRef.afterClosed().subscribe(result => {
+      quagga.stop();
+      document.querySelector('#interactive').innerHTML = '';
+    });
     const App = {
       _scanner: null, lastResult: undefined,
 
@@ -48,9 +52,6 @@ export class ScannerComponent implements OnInit {
     quagga.onDetected(result => {
       const code = result.codeResult.code;
       if (App.lastResult === code) {
-        console.log(code);
-        quagga.stop();
-        document.querySelector('#interactive').innerHTML = '';
         this.dialogRef.close(code);
       }
       App.lastResult = code;

@@ -27,5 +27,8 @@
       transition: 0.2s all;
       cursor: pointer;
     }
+    &.active {
+      color: blue;
+    }
   }
 }
