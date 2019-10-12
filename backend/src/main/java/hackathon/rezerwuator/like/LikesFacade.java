@@ -34,6 +34,6 @@ public class LikesFacade {
     }
 
     public boolean canLike(String resourceCode){
-        return likesRepository.existsByResourceCodeAndUserId(resourceCode, 1L);
+        return !likesRepository.existsByResourceCodeAndUserId(resourceCode, 1L);
     }
 }
