@@ -15,4 +15,17 @@
   td, th {
     width: 25%;
   }
+
+  .like {
+    user-select: none;
+  }
+
+  .material-icons {
+    user-select: none;
+    &:hover {
+      color: #ff6200;
+      transition: 0.2s all;
+      cursor: pointer;
+    }
+  }
 }

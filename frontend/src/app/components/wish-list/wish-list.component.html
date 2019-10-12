@@ -28,7 +28,7 @@
       <td mat-cell *matCellDef="let row">
         <i class="material-icons" (click)="onClickLike(row.code)">
           thumb_up
-        </i> {{row.likes}} </td>
+        </i> <span class="like">{{row.likes}}</span> </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
