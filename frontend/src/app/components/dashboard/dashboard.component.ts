@@ -14,7 +14,7 @@ import quagga from 'quagga/dist/quagga';
 })
 export class DashboardComponent implements OnInit {
 
-    displayedColumns: string[] = ['name', 'code', 'likes'];
+    displayedColumns: string[] = ['name', 'code'];
     public guagga: any;
     dataSource: MatTableDataSource<ResourceModel>;
 

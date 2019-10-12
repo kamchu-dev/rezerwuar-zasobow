@@ -12,13 +12,12 @@ import java.util.UUID;
 class RentFactory {
     private RentRepository rentRepository;
     private UserRepository userRepository;
-    private ResourceFacade resourceFacade;
 
     public Rent createRent(String resourceCode, Long userId){
         userRepository.findById(userId).orElseThrow(() -> new RuntimeException(String.format("No user with id %s",userId)));
-        if(Objects.isNull(resourceFacade.getResource(resourceCode))){
+/*        if(Objects.isNull(resourceFacade.getResource(resourceCode))){
             throw new RuntimeException(String.format("No resource with code %s", resourceCode));
-        }
+        }*/
         LocalDateTime now = LocalDateTime.now();
         rentRepository.findByResourceCodeAndRentedIsFalse(resourceCode)
             .ifPresent(rent -> {

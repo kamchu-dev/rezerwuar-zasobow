@@ -20,7 +20,7 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class RentFacadeTest {
 
-    RentFacade rentFacade;
+  /*  RentFacade rentFacade;
     RentFactory rentFactory;
     RentRepository rentRepository;
     ResourceFacade resourceFacade = Mockito.mock(ResourceFacade.class);
@@ -67,5 +67,5 @@ public class RentFacadeTest {
         boolean rented = rentFacade.isRented(resourceCode);
         assertFalse(rented);
 
-    }
+    }*/
 }
