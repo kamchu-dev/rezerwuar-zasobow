@@ -1,17 +1,13 @@
 package hackathon.rezerwuator.reservation.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
-@Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
-public class ReservationDto {
-    String id;
+public class ReservationRequestDto {
     Long userId;
     String resourceCode;
-    LocalDateTime reservationDate;
 }
