@@ -10,6 +10,7 @@ import { WishListComponent } from './components/wish-list/wish-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ResourceComponent } from './components/resource/resource.component';
+import { HeadTitleComponent } from './shared/head-title/head-title.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ResourceComponent } from './components/resource/resource.component';
     DashboardComponent,
     WishListComponent,
     ResourceComponent,
-    FooterComponent
+    FooterComponent,
+    HeadTitleComponent
   ],
   imports: [
     BrowserModule,

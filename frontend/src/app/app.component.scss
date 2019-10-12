@@ -25,4 +25,7 @@
   height: 55px;
   width: 260px;
   margin: 0 40px 0 10%;
+  &:hover {
+    cursor: pointer;
+  }
 }
