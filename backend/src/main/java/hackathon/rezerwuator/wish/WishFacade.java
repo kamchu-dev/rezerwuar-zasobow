@@ -19,7 +19,7 @@ public class WishFacade {
     public WishDto getResource(String code) {
         return repository.findById(code)
                 .map(entity -> {
-                    Integer likes = likesFacade.getAll().size();
+                    Integer likes = likesFacade.getAll(code).size();
                     return new WishDto(entity.getName(),
                             entity.getDescription(),
                             entity.getCode(),
@@ -36,7 +36,7 @@ public class WishFacade {
         return repository.findAll()
                 .stream()
                 .map(entity -> {
-                    Integer likes = likesFacade.getAll().size();
+                    Integer likes = likesFacade.getAll(entity.getCode()).size();
                     return new WishDto(entity.getName(),
                             entity.getDescription(),
                             entity.getCode(),
