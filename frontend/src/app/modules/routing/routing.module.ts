@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from '../../components/dashboard/dashboard.component';
 import { WishListComponent } from '../../components/wish-list/wish-list.component';
+import {ResourceComponent} from "../../components/resource/resource.component";
 
 const routes: Routes = [
   { path: 'wish-list', component: WishListComponent },
   { path: 'rent', component: DashboardComponent },
+  { path: 'resource/:id', component: ResourceComponent },
   { path: '', component: DashboardComponent },
   { path: '**', component: DashboardComponent },
 ];

@@ -30,15 +30,18 @@ public class ProfileController {
                 new ResourceDto("Żemeł Jest Super",
                         "Wcale tego sam nie napisał",
                         UUID.randomUUID().toString(), UUID.randomUUID().toString()),
-                new RentDto(UUID.randomUUID().toString(), id,
-                        Date.from(LocalDateTime.now().toInstant(ZoneOffset.UTC)),
-                        Date.from(LocalDateTime.now().plusDays(1).toInstant(ZoneOffset.UTC))
-                )));
+                new RentDto(UUID.randomUUID().toString(),
+                        UUID.randomUUID().toString(),
+                        id,
+                        LocalDateTime.now(),
+                        LocalDateTime.now().plusDays(1),
+                        true)
+                ));
         List<MyReservationDto> reservations = Arrays.asList(new MyReservationDto(
                 new ResourceDto("Żemeł Jest Super",
                         "Wcale tego sam nie napisał",
                         UUID.randomUUID().toString(), UUID.randomUUID().toString()),
-                new ReservationDto(1L))
+                new ReservationDto(UUID.randomUUID().toString(), 1L, UUID.randomUUID().toString(), LocalDateTime.now()))
         );
         List<MyWishDto> wishes = Arrays.asList(new MyWishDto(new WishDto("Żemeł Jest Super",
                 "Wcale tego sam nie napisał",
