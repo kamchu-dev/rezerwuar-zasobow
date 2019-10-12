@@ -1,0 +1,18 @@
+:host {
+  width: 80%;
+  display: block;
+  margin-left: 10%;
+
+  table {
+    width: 100%;
+  }
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  td, th {
+    width: 25%;
+  }
+}
