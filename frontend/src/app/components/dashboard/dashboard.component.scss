@@ -5,6 +5,16 @@
 
   table {
     width: 100%;
+    .mat-row {
+      &:hover {
+        background-color: #ff6200;
+        transition: 0.3s background-color;
+        cursor: pointer;
+        .mat-cell {
+          color: white !important;
+        }
+      }
+    }
   }
 
   .mat-form-field {
