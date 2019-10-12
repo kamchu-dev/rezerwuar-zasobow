@@ -33,7 +33,8 @@ export class WishListComponent implements OnInit {
           name: row.name,
           likes: row.likes + 1,
           url: row.url,
-          price: row.price
+          price: row.price,
+          canLike: row.canLike
         };
         console.log('update');
     });

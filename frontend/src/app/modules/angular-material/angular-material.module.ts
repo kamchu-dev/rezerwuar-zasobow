@@ -21,7 +21,8 @@ import {
     MatGridListModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatToolbarModule
   ],
   exports: [
     MatInputModule,
@@ -31,7 +32,8 @@ import {
     MatGridListModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatToolbarModule
   ]
 })
 export class AngularMaterialModule { }

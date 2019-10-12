@@ -3,4 +3,5 @@ export interface WishListModel {
     url: string;
     price: number;
     likes: number;
+    canLike: boolean;
 }
