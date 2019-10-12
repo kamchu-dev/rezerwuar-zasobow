@@ -48,6 +48,6 @@ export class OwnedComponent implements OnInit {
   }
 
   public onClickRow(row): void {
-    this.router.navigate(['/resource/' + row.code]);
+    this.router.navigate(['/resource/' + row.resourceCode]);
   }
 }
