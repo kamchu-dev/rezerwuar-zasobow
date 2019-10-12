@@ -37,4 +37,13 @@ public class ResourceFacade {
         repository.save(resource);
         return resource.getCode();
     }
+
+    public ResourceDto getResourceByQr(String qr) {
+        return repository.findByQr(qr)
+                .map(entity -> new ResourceDto(entity.getName(),
+                        entity.getDescription(),
+                        entity.getCode(),
+                        entity.getQr(), 5))
+                .orElse(null);
+    }
 }
