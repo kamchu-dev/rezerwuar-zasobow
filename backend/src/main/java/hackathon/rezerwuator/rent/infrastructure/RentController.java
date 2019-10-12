@@ -19,27 +19,32 @@ public class RentController {
     private RentFacade rentFacade;
 
     @GetMapping("/api/rent")
-    List<RentDto> getAll(){
+    List<RentDto> getAll() {
         return rentFacade.getAll();
     }
 
     @GetMapping("/api/rent/available")
-    List<RentDto> getAvailable(){
+    List<RentDto> getAvailable() {
         return rentFacade.getByAvailability(false);
     }
 
     @GetMapping("/api/rent/rented")
-    List<RentDto> getRented(){
+    List<RentDto> getRented() {
         return rentFacade.getByAvailability(true);
     }
 
     @PostMapping("/api/rent")
-    public void rent(RentRequestDto rentRequestDto){
+    public void rent(RentRequestDto rentRequestDto) {
         rentFacade.rent(rentRequestDto.getResourceCode(), rentRequestDto.getUserId());
     }
 
     @DeleteMapping("/api/rent/{resourceCode}")
-    public void returnRentedResource(@PathVariable String resourceCode){
+    public void returnRentedResource(@PathVariable String resourceCode) {
         rentFacade.returnRentedResource(resourceCode);
+    }
+
+    @GetMapping("/api/rent/isRented")
+    public boolean isRented(@PathVariable String resourceCode) {
+        return rentFacade.isRented(resourceCode);
     }
 }

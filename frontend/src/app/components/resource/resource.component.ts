@@ -23,4 +23,12 @@ export class ResourceComponent implements OnInit {
       console.log(this.dataSource);
     });
   }
+
+  onClickOrder(code){
+    this.service.order(code).subscribe(() => {});
+  }
+
+  onClickReserve(code){
+    this.service.reserve(code).subscribe(() => { });
+  }
 }

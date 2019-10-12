@@ -12,7 +12,8 @@ import {ActivatedRoute} from "@angular/router";
 export class ResourceService {
 
   private resourcesUrl: string = '/api/resources/';
-
+  private rentUrl: string = '/api/rent';
+  private reserveUrl: string = '/api/reservation';
   constructor(private httpClient: HttpClient) {
   }
 
@@ -26,13 +27,42 @@ export class ResourceService {
       );
   }
 
-
   public getScore(id: string): Observable<ResourceModel> {
     return this.httpClient
       .get(environment.serverPath + this.resourcesUrl + id )
       .pipe(
         map((res: any) => {
           return res;
+        })
+      );
+  }
+
+  public order(code: string): Observable<any> {
+    let like =
+      {
+        "userId": 1,
+        "resourceCode": code
+      };
+    return this.httpClient
+      .post(environment.serverPath + this.rentUrl, like)
+      .pipe(
+        map((res: any) => {
+          return res.product;
+        })
+      );
+  }
+
+  public reserve(code: string): Observable<any> {
+    let like =
+      {
+        "userId": 1,
+        "resourceCode": code
+      };
+    return this.httpClient
+      .post(environment.serverPath + this.reserveUrl, like)
+      .pipe(
+        map((res: any) => {
+          return res.product;
         })
       );
   }
