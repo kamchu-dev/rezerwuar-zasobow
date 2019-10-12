@@ -40,8 +40,8 @@ export class ResourceService {
   public order(code: string): Observable<any> {
     let like =
       {
-        "userId": 1,
-        "resourceCode": code
+        "resourceCode": code,
+        "userId": 1
       };
     return this.httpClient
       .post(environment.serverPath + this.rentUrl, like)
