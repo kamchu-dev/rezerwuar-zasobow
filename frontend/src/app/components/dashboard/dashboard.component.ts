@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { DashboardService } from './dashboard.service';
 import { ResourceModel } from '../../models/resource.model';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-dashboard',
@@ -18,7 +19,7 @@ export class DashboardComponent implements OnInit {
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
     @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-    constructor(private service: DashboardService) {
+    constructor(private service: DashboardService, private router: Router) {
     }
 
     ngOnInit() {
@@ -34,5 +35,9 @@ export class DashboardComponent implements OnInit {
         if (this.dataSource.paginator) {
             this.dataSource.paginator.firstPage();
         }
+    }
+
+    public onClickRow(row): void {
+        this.router.navigate(['/resource/' + row.code]);
     }
 }
