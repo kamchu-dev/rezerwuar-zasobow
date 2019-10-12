@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RoutingModule } from './modules/routing/routing.module';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { RoutingModule } from './modules/routing/routing.module';
     BrowserAnimationsModule,
     AngularMaterialModule
   ],
-  providers: [],
+  providers: [Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
