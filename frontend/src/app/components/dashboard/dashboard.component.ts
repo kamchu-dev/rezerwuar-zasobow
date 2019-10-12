@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DashboardService } from './dashboard.service';
 import { ResourceModel } from '../../models/resource.model';
 import { Router } from '@angular/router';
+import quagga from 'quagga/dist/quagga';
 
 @Component({
     selector: 'app-dashboard',
@@ -13,6 +14,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
+    public guagga: any;
     displayedColumns: string[] = ['name', 'code'];
     dataSource: MatTableDataSource<ResourceModel>;
 
@@ -20,6 +22,7 @@ export class DashboardComponent implements OnInit {
     @ViewChild(MatSort, {static: true}) sort: MatSort;
 
     constructor(private service: DashboardService, private router: Router) {
+        this.guagga = quagga;
     }
 
     ngOnInit() {
