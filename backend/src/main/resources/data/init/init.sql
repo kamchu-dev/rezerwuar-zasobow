@@ -1,0 +1,1 @@
+INSERT INTO USER(ID, NAME, PASSWORD) values (1, 'nb42rp', 'admin');
