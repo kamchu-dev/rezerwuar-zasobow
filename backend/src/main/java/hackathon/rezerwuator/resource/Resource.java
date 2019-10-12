@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import java.util.List;
 
@@ -17,7 +18,7 @@ import java.util.List;
 class Resource {
     String name;
     String description;
-    @ElementCollection(targetClass=String.class)
+    @ElementCollection(targetClass=String.class, fetch = FetchType.EAGER)
     List<String> tags;
     @Id
     String code;
