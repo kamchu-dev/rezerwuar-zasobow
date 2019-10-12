@@ -13,4 +13,5 @@ public class WishDto {
     String price;
     String url;
     Integer likes;
+    boolean canLike;
 }

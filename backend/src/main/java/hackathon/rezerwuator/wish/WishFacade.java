@@ -26,7 +26,8 @@ public class WishFacade {
                             entity.getQr(),
                             entity.getMoney(),
                             entity.getUrl(),
-                            likes);
+                            likes,
+                            likesFacade.canLike(code));
                 })
                 .orElse(null);
     }
@@ -42,13 +43,15 @@ public class WishFacade {
                             entity.getQr(),
                             entity.getMoney(),
                             entity.getUrl(),
-                            likes);
+                            likes,
+                            likesFacade.canLike(entity.getCode()));
                 })
                 .collect(toList());
     }
 
     public String addResource(String name, String description, String qr, String money, String url) {
-        Wish resource = new Wish(name, description, UUID.randomUUID().toString(), qr, money, url);
+        String code = UUID.randomUUID().toString();
+        Wish resource = new Wish(name, description, code, qr, money, url, likesFacade.canLike(code));
         repository.save(resource);
         return resource.getCode();
     }
