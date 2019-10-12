@@ -4,4 +4,5 @@ export interface ResourceModel {
     code: string;
     description: string;
     qr: string;
+    taken: boolean;
 }
