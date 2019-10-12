@@ -33,6 +33,10 @@ public class LikesFacade {
         return likes.getId();
     }
 
+    public void unlike(Long userId, String resourceCode){
+        likesRepository.deleteByResourceCodeAndUserId(resourceCode, userId);
+    }
+
     public boolean canLike(String resourceCode){
         return !likesRepository.existsByResourceCodeAndUserId(resourceCode, 1L);
     }

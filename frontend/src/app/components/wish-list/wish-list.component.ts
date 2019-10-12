@@ -28,6 +28,13 @@ export class WishListComponent implements OnInit {
     });
   }
 
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
   onClickLike(row){
     if (!row.canLike){
       return;
@@ -53,4 +60,5 @@ export class WishListComponent implements OnInit {
       console.dir(this.dataSource);
     });
   }
+
 }

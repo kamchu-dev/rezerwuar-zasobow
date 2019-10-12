@@ -3,6 +3,7 @@ package hackathon.rezerwuator.like.infrastructure;
 import hackathon.rezerwuator.like.LikesFacade;
 import hackathon.rezerwuator.like.dto.LikeDto;
 import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,5 +31,10 @@ class LikeController {
     String reserve(@RequestBody LikeDto likeDto){
          reservationFacade.like(likeDto.getUserId(), likeDto.getResourceCode());
          return "{}";
+    }
+
+    @DeleteMapping("/api/unlike/{resourceCode}")
+    void unlike(@PathVariable String resourceCode){
+        reservationFacade.unlike(1L, resourceCode);
     }
 }
