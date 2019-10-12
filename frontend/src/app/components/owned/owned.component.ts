@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
-import { ResourceModel } from '../../models/resource.model';
 import { DashboardService } from '../dashboard/dashboard.service';
 import { Router } from '@angular/router';
-import { ScannerComponent } from '../scanner/scanner.component';
+import { AddWishComponent } from '../add-wish/add-wish.component';
 
 @Component({
   selector: 'app-owned',
@@ -23,13 +22,9 @@ export class OwnedComponent implements OnInit {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(ScannerComponent, {});
+    const dialogRef = this.dialog.open(AddWishComponent, {});
 
-    dialogRef.afterClosed().subscribe(result => {
-      this.filter.value = result;
-      this.applyFilter(result);
-      console.log('The dialog was closed');
-    });
+
   }
 
   ngOnInit() {
