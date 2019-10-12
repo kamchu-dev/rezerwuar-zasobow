@@ -4,6 +4,7 @@ import {ResourceModel} from '../../models/resource.model';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {map} from 'rxjs/operators';
+import { WishListModel } from '../../models/wish-list.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,18 +28,16 @@ export class WishService {
       );
   }
 
-  public addLike(code: string): Observable<ResourceModel> {
+  public addLike(row: any): Observable<any> {
     let like =
       {
         "userId": 1,
-        "resourceCode": code
+        "resourceCode": row.code
       };
     return this.httpClient
       .post(environment.serverPath + this.likesUrl, like)
       .pipe(
-        map((res: any) => {
-          return res.product;
-        })
+
       );
   }
 }
