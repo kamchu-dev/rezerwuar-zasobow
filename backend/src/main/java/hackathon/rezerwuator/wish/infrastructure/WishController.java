@@ -25,8 +25,8 @@ class WishController {
     }
 
     @PostMapping
-    public String addResource(String name, String description, String qr) {
-        return facade.addResource(name, description, qr, "113.50$", "https://www.amazon.com/Java-Dummies-Computers-Barry-Burd/dp/1119175690");
+    public String addResource(String name, String description, String qr, String price, String url) {
+        return facade.addResource(name, description, qr, price, url);
     }
 
     @GetMapping("/{code}")
