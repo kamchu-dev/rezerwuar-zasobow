@@ -5,17 +5,19 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class InMemoryResourceRepository implements ResourceRepository{
     private Set<Resource> resources = new HashSet<>();
 
     @Override
     public List<Resource> findAll() {
-        return null;
+        return new ArrayList<>(resources);
     }
 
     @Override
