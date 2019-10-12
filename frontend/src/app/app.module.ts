@@ -6,11 +6,13 @@ import { AngularMaterialModule } from './modules/angular-material/angular-materi
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RoutingModule } from './modules/routing/routing.module';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { ResourceComponent } from './components/resource/resource.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    ResourceComponent
   ],
   imports: [
     BrowserModule,
