@@ -12,6 +12,7 @@ export class WishService {
 
   private resourcesUrl: string = '/api/wish';
   private likesUrl: string = '/api/like';
+  private unlikeUrl: string = 'api/unlike';
 
   constructor(private httpClient: HttpClient) {
 
@@ -35,6 +36,15 @@ export class WishService {
       };
     return this.httpClient
       .post(environment.serverPath + this.likesUrl, like)
+      .pipe(
+
+      );
+  }
+
+  public removeLike(row: any): Observable<any> {
+
+    return this.httpClient
+      .delete(environment.serverPath + this.unlikeUrl + row.code)
       .pipe(
 
       );

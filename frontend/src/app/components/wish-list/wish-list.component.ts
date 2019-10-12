@@ -60,4 +60,5 @@ export class WishListComponent implements OnInit {
       console.dir(this.dataSource);
     });
   }
+
 }
