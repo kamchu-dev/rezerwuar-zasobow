@@ -26,6 +26,12 @@ public class ResourceConfig {
         resourceDtos.add(new ResourceDto("Nowa książka somsiada",
                 "Ciekawe skąd miał pieniążki",
                 UUID.randomUUID().toString(), UUID.randomUUID().toString(), 5, false, true));
+        resourceDtos.add(new ResourceDto("Cola",
+                "Z hackatonu",
+                "5449000000286", "5449000000286", 6, false, true));
+        resourceDtos.add(new ResourceDto("Dubiel",
+                "Najlepszy tester i QA",
+                "1234567890128", "1234567890128", 6, false, true));
 
         resourceDtos.forEach( resource -> resourceFacade.addResource(resource.getName(), resource.getDescription(), resource.getQr()));
 
