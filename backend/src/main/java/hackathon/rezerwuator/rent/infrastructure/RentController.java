@@ -39,7 +39,7 @@ public class RentController {
     }
 
     @DeleteMapping("/api/rent/{resourceCode}")
-    public void rent(@PathVariable String resourceCode){
+    public void returnRentedResource(@PathVariable String resourceCode){
         rentFacade.returnRentedResource(resourceCode);
     }
 }
