@@ -29,7 +29,7 @@ public class ProfileController {
         List<MyRentDto> rents = Arrays.asList(new MyRentDto(
                 new ResourceDto("Żemeł Jest Super",
                         "Wcale tego sam nie napisał",
-                        UUID.randomUUID().toString(), UUID.randomUUID().toString(), 5, false, true),
+                        UUID.randomUUID().toString(), UUID.randomUUID().toString(), 5,"Fajność,Klasa,Szyk", false, true),
                 new RentDto(UUID.randomUUID().toString(),
                         UUID.randomUUID().toString(),
                         id,
@@ -40,7 +40,7 @@ public class ProfileController {
         List<MyReservationDto> reservations = Arrays.asList(new MyReservationDto(
                 new ResourceDto("Żemeł Jest Super",
                         "Wcale tego sam nie napisał",
-                        UUID.randomUUID().toString(), UUID.randomUUID().toString(), 5, false, true),
+                        UUID.randomUUID().toString(), UUID.randomUUID().toString(), 5,"Fajność,Klasa,Szyk", false, true),
                 new ReservationDto(UUID.randomUUID().toString(), 1L, UUID.randomUUID().toString(), LocalDateTime.now()))
         );
         List<MyWishDto> wishes = Arrays.asList(new MyWishDto(new WishDto("Żemeł Jest Super",

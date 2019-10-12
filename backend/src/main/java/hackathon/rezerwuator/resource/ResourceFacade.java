@@ -26,6 +26,7 @@ public class ResourceFacade {
                         entity.getCode(),
                         entity.getQr(),
                         5,
+                        entity.getTags(),
                         isRented,
                         canLike))
                 .orElse(null);
@@ -43,14 +44,15 @@ public class ResourceFacade {
                             entity.getCode(),
                             entity.getQr(),
                             5,
+                            entity.getTags(),
                             isRented,
                             canLike);
                 })
                 .collect(toList());
     }
 
-    public String addResource(String name, String description, String qr){
-        Resource resource = new Resource(name, description, UUID.randomUUID().toString(), qr);
+    public String addResource(String name, String description, String qr, String tags){
+        Resource resource = new Resource(name, description,tags, UUID.randomUUID().toString(), qr);
         repository.save(resource);
         return resource.getCode();
     }
@@ -66,6 +68,7 @@ public class ResourceFacade {
                             entity.getCode(),
                             entity.getQr(),
                             5,
+                            entity.getTags(),
                             isRented,
                             canLike);
                 })

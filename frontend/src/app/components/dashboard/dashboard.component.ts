@@ -14,8 +14,8 @@ import {MatDialog} from '@angular/material';
     styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  filter = {value: ''};
-    displayedColumns: string[] = ['name', 'code'];
+    filter = {value: ''};
+    displayedColumns: string[] = ['name', 'tags', 'code'];
     dataSource: MatTableDataSource<ResourceModel>;
 
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;

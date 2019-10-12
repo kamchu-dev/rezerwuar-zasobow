@@ -15,6 +15,7 @@ import javax.persistence.Id;
 class Resource {
     String name;
     String description;
+    String tags;
     @Id
     String code;
     String qr;

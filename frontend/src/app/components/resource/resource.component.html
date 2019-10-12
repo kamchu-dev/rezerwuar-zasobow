@@ -49,10 +49,12 @@
     <section id="resource-actions">
       <div class="row">
         <div class="col-md-12">
-          <button id="reserve-button" class="btn btn-secondary btn-lg">
+          <button id="reserve-button" class="btn btn-secondary btn-lg" (click)="onClickReserve(dataSource.code)">
             Make a reservation
           </button>
-          <button id="borrow-button" class="btn btn-success btn-lg">Borrow now</button>
+          <button id="borrow-button" class="btn btn-success btn-lg" (click)="onClickOrder(dataSource.code)">
+            Borrow now
+          </button>
         </div>
       </div>
     </section>
