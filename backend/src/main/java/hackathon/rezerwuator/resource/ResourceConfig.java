@@ -3,13 +3,11 @@ package hackathon.rezerwuator.resource;
 import hackathon.rezerwuator.resource.dto.ResourceDto;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.util.ArrayList;
 import java.util.UUID;
 
 @Configuration
-@EnableJpaRepositories(basePackageClasses = ResourceFacade.class)
 public class ResourceConfig {
 
     @Bean
