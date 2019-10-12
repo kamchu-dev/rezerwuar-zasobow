@@ -31,7 +31,7 @@ public class ProfileController {
                 new ResourceDto("Żemeł Jest Super",
                         "Wcale tego sam nie napisał",
                         UUID.randomUUID().toString(), UUID.randomUUID().toString(), Arrays.asList("Żemeł tego nie pisał","Fajność","Klasa","Szyk"), false),
-                new RentDto(UUID.randomUUID().toString(),
+                new RentDto("Żemeł Jest Super", UUID.randomUUID().toString(),
                         UUID.randomUUID().toString(),
                         id,
                         LocalDateTime.now(),

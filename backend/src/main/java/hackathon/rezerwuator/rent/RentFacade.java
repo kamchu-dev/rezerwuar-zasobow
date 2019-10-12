@@ -14,11 +14,13 @@ import java.util.stream.Collectors;
 public class RentFacade {
     private RentFactory rentFactory;
     private RentRepository rentRepository;
+    private ResourceFacade resourceFacade;
 
     public List<RentDto> getAll(){
         return rentRepository.findAll()
                 .stream()
                 .map(entity -> new RentDto(
+                        resourceFacade.getResource(entity.getResourceCode()).getName(),
                         entity.getId(),
                         entity.getResourceCode(),
                         entity.getUserId(),
@@ -48,8 +50,10 @@ public class RentFacade {
     }
 
     public List<RentDto> getByAvailability(boolean rented){
+
         return rentRepository.findAllByRented(rented).stream()
                 .map(entity -> new RentDto(
+                        resourceFacade.getResource(entity.getResourceCode()).getName(),
                         entity.getId(),
                         entity.getResourceCode(),
                         entity.getUserId(),
@@ -64,6 +68,7 @@ public class RentFacade {
         return rentRepository.findAllByUserIdAndRentedIsTrue(userId)
                 .stream()
                 .map(entity -> new RentDto(
+                        resourceFacade.getResource(entity.getResourceCode()).getName(),
                         entity.getId(),
                         entity.getResourceCode(),
                         entity.getUserId(),

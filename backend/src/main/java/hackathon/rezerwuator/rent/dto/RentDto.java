@@ -10,6 +10,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 public class RentDto {
+    String name;
     String id;
     String resourceCode;
     Long userId;
