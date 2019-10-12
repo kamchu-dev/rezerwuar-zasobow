@@ -27,7 +27,7 @@ class ResourceController {
         return facade.addResource(name, description, qr);
     }
 
-    @GetMapping("/api/resources/ode}")
+    @GetMapping("/api/resources/{code}")
     public ResourceDto getResource(@PathVariable("code") String code){
         return facade.getResource(code);
     }
