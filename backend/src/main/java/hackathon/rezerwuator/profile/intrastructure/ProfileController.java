@@ -17,6 +17,7 @@ import java.sql.Date;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -29,7 +30,7 @@ public class ProfileController {
         List<MyRentDto> rents = Arrays.asList(new MyRentDto(
                 new ResourceDto("Żemeł Jest Super",
                         "Wcale tego sam nie napisał",
-                        UUID.randomUUID().toString(), UUID.randomUUID().toString(), 5,"Fajność,Klasa,Szyk", false, true),
+                        UUID.randomUUID().toString(), UUID.randomUUID().toString(), 5, Arrays.asList("Żemeł tego nie pisał","Fajność","Klasa","Szyk"), false, true),
                 new RentDto(UUID.randomUUID().toString(),
                         UUID.randomUUID().toString(),
                         id,
@@ -40,7 +41,7 @@ public class ProfileController {
         List<MyReservationDto> reservations = Arrays.asList(new MyReservationDto(
                 new ResourceDto("Żemeł Jest Super",
                         "Wcale tego sam nie napisał",
-                        UUID.randomUUID().toString(), UUID.randomUUID().toString(), 5,"Fajność,Klasa,Szyk", false, true),
+                        UUID.randomUUID().toString(), UUID.randomUUID().toString(), 5,Arrays.asList("Żemeł tego nie pisał","Fajność","Klasa","Szyk"), false, true),
                 new ReservationDto(UUID.randomUUID().toString(), 1L, UUID.randomUUID().toString(), LocalDateTime.now()))
         );
         List<MyWishDto> wishes = Arrays.asList(new MyWishDto(new WishDto("Żemeł Jest Super",

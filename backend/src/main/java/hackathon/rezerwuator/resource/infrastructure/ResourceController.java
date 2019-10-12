@@ -23,7 +23,7 @@ class ResourceController {
     }
 
     @PostMapping("/api/resources")
-    public String addResource(String name, String description, String qr, String tags){
+    public String addResource(String name, String description, String qr, List<String> tags){
         return facade.addResource(name, description, qr, tags);
     }
 
