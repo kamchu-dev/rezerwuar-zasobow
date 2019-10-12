@@ -3,8 +3,13 @@ package hackathon.rezerwuator.wish.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@Data
 @AllArgsConstructor
+@Data
 public class WishDto {
-    private Long id;
+    String name;
+    String description;
+    String code;
+    String qr;
+    String price;
+    String url;
 }

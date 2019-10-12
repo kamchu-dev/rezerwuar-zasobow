@@ -43,7 +43,9 @@ public class ProfileController {
                         UUID.randomUUID().toString(), UUID.randomUUID().toString()),
                 new ReservationDto(UUID.randomUUID().toString(), 1L, UUID.randomUUID().toString(), LocalDateTime.now()))
         );
-        List<MyWishDto> wishes = Arrays.asList(new MyWishDto(new WishDto(1L)));
+        List<MyWishDto> wishes = Arrays.asList(new MyWishDto(new WishDto("Żemeł Jest Super",
+                "Wcale tego sam nie napisał",
+                UUID.randomUUID().toString(), UUID.randomUUID().toString(), "113.50 $", "https://www.amazon.com/Java-Dummies-Computers-Barry-Burd/dp/1119175690")));
         ProfileDto result = new ProfileDto(rents, reservations, wishes);
         return result;
     }
