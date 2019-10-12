@@ -11,13 +11,16 @@
     </ng-container>
 
     <ng-container matColumnDef="url">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> URL </th>
-      <td mat-cell *matCellDef="let row"> {{row.code}}% </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Resource reference </th>
+      <td mat-cell *matCellDef="let row">
+        <a mat-stroked-button href="{{row.url}}">Go and buy</a>
+
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="price">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
-      <td mat-cell *matCellDef="let row"> {{row.code}}% </td>
+      <td mat-cell *matCellDef="let row"> {{row.price}}% </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
