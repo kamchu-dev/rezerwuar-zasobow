@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -26,7 +27,7 @@ class LikeController {
     }
 
     @PostMapping("/api/like")
-    String reserve(LikeDto likeDto){
+    String reserve(@RequestBody LikeDto likeDto){
          reservationFacade.like(likeDto.getUserId(), likeDto.getResourceCode());
          return "{}";
     }

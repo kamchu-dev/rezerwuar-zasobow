@@ -19,15 +19,13 @@ public class ResourceFacade {
 
     public ResourceDto getResource(String code){
         boolean isRented = rentFacade.isRented(code);
-        boolean canLike = likeFacade.canLike(code);
         return repository.findById(code)
                 .map(entity -> new ResourceDto(entity.getName(),
                         entity.getDescription(),
                         entity.getCode(),
                         entity.getQr(),
-                        5,
-                        isRented,
-                        canLike))
+                        entity.getTags(),
+                        isRented))
                 .orElse(null);
     }
 
@@ -42,15 +40,14 @@ public class ResourceFacade {
                             entity.getDescription(),
                             entity.getCode(),
                             entity.getQr(),
-                            5,
-                            isRented,
-                            canLike);
+                            entity.getTags(),
+                            isRented);
                 })
                 .collect(toList());
     }
 
-    public String addResource(String name, String description, String qr, String tags){
-        Resource resource = new Resource(name, description, UUID.randomUUID().toString(), qr, tags);
+    public String addResource(String name, String description, String qr, List<String> tags){
+        Resource resource = new Resource(name, description,tags, UUID.randomUUID().toString(), qr);
         repository.save(resource);
         return resource.getCode();
     }
@@ -65,9 +62,8 @@ public class ResourceFacade {
                             entity.getDescription(),
                             entity.getCode(),
                             entity.getQr(),
-                            5,
-                            isRented,
-                            canLike);
+                            entity.getTags(),
+                            isRented);
                 })
                 .orElse(null);
     }

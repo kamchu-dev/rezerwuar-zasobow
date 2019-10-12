@@ -19,14 +19,15 @@ public class WishFacade {
     public WishDto getResource(String code) {
         return repository.findById(code)
                 .map(entity -> {
-                    Integer likes = likesFacade.getAll().size();
+                    Integer likes = likesFacade.getAll(code).size();
                     return new WishDto(entity.getName(),
                             entity.getDescription(),
                             entity.getCode(),
                             entity.getQr(),
                             entity.getMoney(),
                             entity.getUrl(),
-                            likes);
+                            likes,
+                            likesFacade.canLike(code));
                 })
                 .orElse(null);
     }
@@ -35,20 +36,22 @@ public class WishFacade {
         return repository.findAll()
                 .stream()
                 .map(entity -> {
-                    Integer likes = likesFacade.getAll().size();
+                    Integer likes = likesFacade.getAll(entity.getCode()).size();
                     return new WishDto(entity.getName(),
                             entity.getDescription(),
                             entity.getCode(),
                             entity.getQr(),
                             entity.getMoney(),
                             entity.getUrl(),
-                            likes);
+                            likes,
+                            likesFacade.canLike(entity.getCode()));
                 })
                 .collect(toList());
     }
 
     public String addResource(String name, String description, String qr, String money, String url) {
-        Wish resource = new Wish(name, description, UUID.randomUUID().toString(), qr, money, url);
+        String code = UUID.randomUUID().toString();
+        Wish resource = new Wish(name, description, code, qr, money, url, likesFacade.canLike(code));
         repository.save(resource);
         return resource.getCode();
     }

@@ -24,6 +24,8 @@ import {MatNativeDateModule} from "@angular/material/core";
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatToolbarModule,
+    MatSortModule,
     MatDatepickerModule,
     MatNativeDateModule
   ],
@@ -35,6 +37,8 @@ import {MatNativeDateModule} from "@angular/material/core";
     MatGridListModule,
     MatTableModule,
     MatPaginatorModule,
+    MatSortModule,
+    MatToolbarModule,
     MatSortModule,
     MatDatepickerModule,
     MatNativeDateModule

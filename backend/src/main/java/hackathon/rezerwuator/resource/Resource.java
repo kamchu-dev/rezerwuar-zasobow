@@ -5,8 +5,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -15,7 +18,8 @@ import javax.persistence.Id;
 class Resource {
     String name;
     String description;
-    String tags;
+    @ElementCollection(targetClass=String.class, fetch = FetchType.EAGER)
+    List<String> tags;
     @Id
     String code;
     String qr;
