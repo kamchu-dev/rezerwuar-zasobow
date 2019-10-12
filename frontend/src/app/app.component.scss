@@ -31,11 +31,13 @@
     cursor: pointer;
   }
 }
-
-.fixed-scanner {
+.round-button {
   height: 100px;
   width: 100px;
   border-radius: 50px;
+}
+
+.fixed-scanner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +47,7 @@
   position: fixed;
   bottom: 5%;
   right: 2%;
-
+  z-index: 9999;
 }
 
 .fixed-scanner:hover{
