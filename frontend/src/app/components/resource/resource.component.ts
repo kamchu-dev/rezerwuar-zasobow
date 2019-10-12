@@ -3,6 +3,8 @@ import {ResourceModel} from "../../models/resource.model";
 import {ResourceService} from "./resource.service";
 import {ActivatedRoute} from "@angular/router";
 import {Location} from '@angular/common';
+import {SuccessfulComponent} from '../successful/successful.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-resource',
@@ -14,9 +16,12 @@ export class ResourceComponent implements OnInit {
 
   id: string;
   dataSource: ResourceModel;
+  showButtons: boolean;
 
-  constructor(private service: ResourceService, route: ActivatedRoute, private location: Location) {
+  constructor(private service: ResourceService, route: ActivatedRoute, private snackBar: MatSnackBar, private location: Location) {
     this.id = route.snapshot.params.id;
+    this.snackBar = snackBar;
+    this.showButtons = true;
   }
 
   ngOnInit() {
@@ -25,16 +30,27 @@ export class ResourceComponent implements OnInit {
       console.log(this.dataSource);
     });
   }
-
-  onClickBack() {
+onClickBack() {
     this.location.back();
-  }
+}
 
-  onClickOrder(code){
-    this.service.order(code).subscribe(() => {});
-  }
+    onClickOrder(code) {
+        this.snackBar.openFromComponent(SuccessfulComponent, {
+            duration: 5000,
+            panelClass: ['successful-snackbar']
+        });
+        this.showButtons = false;
+        this.service.order(code).subscribe(() => {
+        });
+    }
 
-  onClickReserve(code){
-    this.service.reserve(code).subscribe(() => { });
+  onClickReserve(code) {
+    this.snackBar.openFromComponent(SuccessfulComponent, {
+      duration: 5000,
+      panelClass: ['successful-snackbar']
+    });
+    this.showButtons = false;
+    this.service.reserve(code).subscribe(() => {
+    });
   }
 }

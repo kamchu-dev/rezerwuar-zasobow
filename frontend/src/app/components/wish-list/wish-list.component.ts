@@ -1,7 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ResourceModel} from "../../models/resource.model";
-import {MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
-import {WishService} from "./wish.service";
+import {ResourceModel} from '../../models/resource.model';
+import {MatPaginator, MatSnackBar, MatSort, MatTableDataSource} from '@angular/material';
+import {WishService} from './wish.service';
+import {SuccessfulComponent} from '../successful/successful.component';
 
 @Component({
   selector: 'app-wish-list',
@@ -16,7 +17,8 @@ export class WishListComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor(private service: WishService) { }
+  constructor(private service: WishService, private snackBar: MatSnackBar) {
+  }
 
   ngOnInit() {
     this.service.getResources().subscribe((res: ResourceModel[]) => {
@@ -26,10 +28,21 @@ export class WishListComponent implements OnInit {
     });
   }
 
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
   onClickLike(row){
     if (!row.canLike){
       return;
     }
+    this.snackBar.openFromComponent(SuccessfulComponent, {
+      duration: 5000,
+      panelClass: ['successful-snackbar']
+    });
     this.service.addLike(row).subscribe(() => {
         const newObj: ResourceModel = {
           name: row.name,

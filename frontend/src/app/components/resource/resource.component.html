@@ -67,7 +67,7 @@
             <mat-datepicker #pickerFrom></mat-datepicker>
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <input matInput [matDatepicker]="pickerTo" placeholder="From:">
+            <input [matDatepicker]="pickerTo" matInput placeholder="To:">
             <mat-datepicker-toggle matSuffix [for]="pickerTo">
               <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
             </mat-datepicker-toggle>
@@ -78,10 +78,12 @@
     <section id="resource-actions">
       <div class="row">
         <div class="col-md-12">
-          <button *ngIf="dataSource.taken"  id="reserve-button" class="btn btn-secondary btn-lg" (click)="onClickReserve(dataSource?.code)">
+          <button (click)="onClickReserve(dataSource?.code)" *ngIf="dataSource.taken && showButtons"
+                  class="btn btn-secondary btn-lg" id="reserve-button">
             Make a reservation
           </button>
-          <button *ngIf="!dataSource.taken" id="borrow-button" class="btn btn-success btn-lg" (click)="onClickOrder(dataSource?.code)">
+          <button (click)="onClickOrder(dataSource?.code)" *ngIf="!dataSource.taken && showButtons"
+                  class="btn btn-success btn-lg" id="borrow-button">
             Borrow now
           </button>
         </div>

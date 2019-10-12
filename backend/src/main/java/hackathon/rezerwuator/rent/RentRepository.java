@@ -11,6 +11,7 @@ interface RentRepository  extends JpaRepository<Rent, String> {
     boolean existsByResourceCodeAndRentedIsTrue(String resourceCode);
     Optional<Rent> findByResourceCodeAndRentedIsFalse(String resourceCode);
     List<Rent> findAllByRented(boolean rented);
+    List<Rent> findAllByUserIdAndRentedIsTrue(long userId);
 
     Optional<Rent> findByResourceCodeAndRentedIsTrue(String resourceCode);
 }

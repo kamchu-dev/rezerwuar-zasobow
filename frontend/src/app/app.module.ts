@@ -12,9 +12,10 @@ import {FooterComponent} from './shared/footer/footer.component';
 import {ResourceComponent} from './components/resource/resource.component';
 import {HeadTitleComponent} from './shared/head-title/head-title.component';
 import {ScannerComponent} from './components/scanner/scanner.component';
-import {MatDialogModule, MatDialogRef} from '@angular/material';
+import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatDialogModule, MatDialogRef, MatSnackBarModule} from '@angular/material';
 import {FormsModule} from "@angular/forms";
 import { OwnedComponent } from './components/owned/owned.component';
+import {SuccessfulComponent} from "./components/successful/successful.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { OwnedComponent } from './components/owned/owned.component';
     FooterComponent,
     HeadTitleComponent,
     ScannerComponent,
-    OwnedComponent
+    OwnedComponent,
+    SuccessfulComponent
   ],
   imports: [
     BrowserModule,
@@ -34,13 +36,15 @@ import { OwnedComponent } from './components/owned/owned.component';
     AngularMaterialModule,
     HttpClientModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule
   ],
-  providers: [Location, {provide: MatDialogRef, useValue: {}}, {
+  providers: [Location, {provide: MatDialogRef, useValue: {}},
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 5000}}, {
     provide: LocationStrategy,
     useClass: PathLocationStrategy
   }],
   bootstrap: [AppComponent],
-  entryComponents: [ScannerComponent]
+  entryComponents: [ScannerComponent, SuccessfulComponent]
 })
 export class AppModule { }
