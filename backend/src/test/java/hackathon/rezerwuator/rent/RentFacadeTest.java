@@ -39,7 +39,7 @@ public class RentFacadeTest {
         long userId = 1L;
         String resourceCode = UUID.randomUUID().toString();
         when(userRepository.findById(Mockito.eq(userId))).thenReturn(Optional.of(new User()));
-        when(resourceFacade.getResource(Mockito.eq(resourceCode))).thenReturn(new ResourceDto(null, null, resourceCode, null));
+        when(resourceFacade.getResource(Mockito.eq(resourceCode))).thenReturn(new ResourceDto(null, null, resourceCode, null, 0));
 
         //when
 
@@ -57,7 +57,7 @@ public class RentFacadeTest {
         long userId = 1L;
         String resourceCode = UUID.randomUUID().toString();
         when(userRepository.findById(Mockito.eq(userId))).thenReturn(Optional.of(new User()));
-        when(resourceFacade.getResource(Mockito.eq(resourceCode))).thenReturn(new ResourceDto(null, null, resourceCode, null));
+        when(resourceFacade.getResource(Mockito.eq(resourceCode))).thenReturn(new ResourceDto(null, null, resourceCode, null, 0));
         rentFacade.rent(resourceCode, userId);
 
         //when

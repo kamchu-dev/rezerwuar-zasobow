@@ -31,4 +31,9 @@ class ResourceController {
     public ResourceDto getResource(@PathVariable("code") String code){
         return facade.getResource(code);
     }
+
+    @GetMapping("/api/resources/qr/{qr}")
+    public ResourceDto getResourceByQr(@PathVariable("qr") String qr){
+        return facade.getResourceByQr(qr);
+    }
 }

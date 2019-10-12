@@ -41,7 +41,7 @@ public class ReservationFacadeTest {
         Long userId = 1L;
         String resourceCode = UUID.randomUUID().toString();
         when(userRepository.findById(Mockito.eq(userId))).thenReturn(Optional.of(new User()));
-        when(resourceFacade.getResource(Mockito.eq(resourceCode))).thenReturn(new ResourceDto(null, null, resourceCode, null));
+        when(resourceFacade.getResource(Mockito.eq(resourceCode))).thenReturn(new ResourceDto(null, null, resourceCode, null, 0));
 
         //when
         reservationFacade.reserve(userId, resourceCode);
@@ -59,7 +59,7 @@ public class ReservationFacadeTest {
         Long userId = 1L;
         String resourceCode = UUID.randomUUID().toString();
         when(userRepository.findById(Mockito.eq(userId))).thenReturn(Optional.of(new User()));
-        when(resourceFacade.getResource(Mockito.eq(resourceCode))).thenReturn(new ResourceDto(null, null, resourceCode, null));
+        when(resourceFacade.getResource(Mockito.eq(resourceCode))).thenReturn(new ResourceDto(null, null, resourceCode, null, 0));
         reservationFacade.reserve(userId, resourceCode);
 
         //when

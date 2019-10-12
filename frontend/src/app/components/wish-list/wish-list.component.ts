@@ -27,8 +27,7 @@ export class WishListComponent implements OnInit {
   }
 
   onClickLike(code){
-    console.log("DSADJSAIDJSAIDJSAI");
-    this.service.addLike(code);
+    this.service.addLike(code).subscribe(() => { });
   }
 
 }

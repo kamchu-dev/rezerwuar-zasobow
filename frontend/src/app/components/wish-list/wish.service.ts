@@ -27,7 +27,7 @@ export class WishService {
       );
   }
 
-  public addLike(code: string): Observable<ResourceModel> {
+  public addLike(code: string): Observable<any> {
     let like =
       {
         "userId": 1,
