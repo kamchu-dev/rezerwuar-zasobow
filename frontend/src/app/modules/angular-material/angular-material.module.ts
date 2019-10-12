@@ -8,8 +8,10 @@ import {
   MatGridListModule,
   MatTableModule,
   MatPaginatorModule,
-  MatSortModule
+  MatSortModule,
+  MatDatepickerModule
 } from '@angular/material';
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   imports: [
@@ -22,7 +24,10 @@ import {
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSortModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     MatInputModule,
@@ -33,7 +38,10 @@ import {
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSortModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class AngularMaterialModule { }
