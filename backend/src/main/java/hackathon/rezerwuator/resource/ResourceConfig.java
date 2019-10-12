@@ -20,25 +20,23 @@ public class ResourceConfig {
         ArrayList<ResourceDto> resourceDtos = new ArrayList<>();
         resourceDtos.add(new ResourceDto("Żemeł Jest Super",
                 "Wcale tego sam nie napisał",
-                "stalykod", UUID.randomUUID().toString(), 5, Arrays.asList("Żemeł tego nie pisał","Fajność","Klasa","Szyk"), true,false
+                "stalykod", UUID.randomUUID().toString(),  Arrays.asList("Żemeł tego nie pisał","Fajność","Klasa","Szyk"), true
                 ));
         resourceDtos.add(new ResourceDto("Somsiedzi",
                 "miejsce 4 jest pewne",
                 UUID.randomUUID().toString(), UUID.randomUUID().toString(),
-                5,
                 Arrays.asList("Winners","Somsiedzi","Jak Już Co Robić To Bylejak"),
-                false,
                 false));
         resourceDtos.add(new ResourceDto("Nowa książka somsiada",
                 "Ciekawe skąd miał pieniążki",
-                UUID.randomUUID().toString(), UUID.randomUUID().toString(), 5,Arrays.asList("Niepewność","UprzejmieDonosze"), false, true));
+                UUID.randomUUID().toString(), UUID.randomUUID().toString(), Arrays.asList("Niepewność","UprzejmieDonosze"), false));
 
         resourceDtos.add(new ResourceDto("Cola",
                 "Z hackatonu",
-                "5449000000286", "5449000000286", 6, Arrays.asList("Ambrozja", "Smak"), false, true));
+                "5449000000286", "5449000000286", Arrays.asList("Ambrozja", "Smak"), false));
         resourceDtos.add(new ResourceDto("Dubiel",
                 "Najlepszy tester i QA",
-                "1234567890128", "1234567890128", 6, Arrays.asList("Gruby"), false, true));
+                "1234567890128", "1234567890128",Arrays.asList("Gruby"), false));
         resourceDtos.forEach( resource -> resourceFacade.addResource(resource.getName(), resource.getDescription(), resource.getQr(),resource.getTags()));
 
         return resourceFacade;

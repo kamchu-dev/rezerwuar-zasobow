@@ -17,13 +17,13 @@ public class WishConfig {
         ArrayList<WishDto> resourceDtos = new ArrayList<>();
         resourceDtos.add(new WishDto("Żemeł Jest Super",
                 "Wcale tego sam nie napisał",
-                UUID.randomUUID().toString(), UUID.randomUUID().toString(), "113.50 $", "https://www.amazon.com/Java-Dummies-Computers-Barry-Burd/dp/1119175690", 5));
+                UUID.randomUUID().toString(), UUID.randomUUID().toString(), "113.50 $", "https://www.amazon.com/Java-Dummies-Computers-Barry-Burd/dp/1119175690", 5, true));
         resourceDtos.add(new WishDto("Somsiedzi",
                 "miejsce 4 jest pewne",
-                UUID.randomUUID().toString(), UUID.randomUUID().toString(), "113.50 $", "https://www.amazon.com/Java-Dummies-Computers-Barry-Burd/dp/1119175690",5));
+                UUID.randomUUID().toString(), UUID.randomUUID().toString(), "113.50 $", "https://www.amazon.com/Java-Dummies-Computers-Barry-Burd/dp/1119175690",5, true));
         resourceDtos.add(new WishDto("Nowa książka somsiada",
                 "Ciekawe skąd miał pieniążki",
-                UUID.randomUUID().toString(), UUID.randomUUID().toString(), "113.50 $", "https://www.amazon.com/Java-Dummies-Computers-Barry-Burd/dp/1119175690", 5));
+                UUID.randomUUID().toString(), UUID.randomUUID().toString(), "113.50 $", "https://www.amazon.com/Java-Dummies-Computers-Barry-Burd/dp/1119175690", 5, true));
 
         resourceDtos.forEach(resource -> wishFacade.addResource(resource.getName(), resource.getDescription(), resource.getQr(), "113.50 $", "https://www.amazon.com/Java-Dummies-Computers-Barry-Burd/dp/1119175690"));
 
