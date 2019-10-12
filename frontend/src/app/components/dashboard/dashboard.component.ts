@@ -14,8 +14,8 @@ import quagga from 'quagga/dist/quagga';
 })
 export class DashboardComponent implements OnInit {
 
+    displayedColumns: string[] = ['name', 'code', 'likes'];
     public guagga: any;
-    displayedColumns: string[] = ['name', 'code'];
     dataSource: MatTableDataSource<ResourceModel>;
 
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;

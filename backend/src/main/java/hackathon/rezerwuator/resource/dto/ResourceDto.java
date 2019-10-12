@@ -10,4 +10,5 @@ public class ResourceDto {
     String description;
     String code;
     String qr;
+    Integer likes;
 }

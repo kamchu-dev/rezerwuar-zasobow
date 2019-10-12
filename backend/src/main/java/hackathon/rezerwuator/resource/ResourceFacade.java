@@ -18,7 +18,7 @@ public class ResourceFacade {
                 .map(entity -> new ResourceDto(entity.getName(),
                         entity.getDescription(),
                         entity.getCode(),
-                        entity.getQr()))
+                        entity.getQr(), 5))
                 .orElse(null);
     }
 
@@ -28,7 +28,7 @@ public class ResourceFacade {
                 .map(entity -> new ResourceDto(entity.getName(),
                         entity.getDescription(),
                         entity.getCode(),
-                        entity.getQr()))
+                        entity.getQr(), 5))
                 .collect(toList());
     }
 
