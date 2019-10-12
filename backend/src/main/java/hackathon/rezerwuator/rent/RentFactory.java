@@ -1,6 +1,7 @@
 package hackathon.rezerwuator.rent;
 
 import hackathon.rezerwuator.resource.ResourceFacade;
+import hackathon.rezerwuator.resource.dto.ResourceDto;
 import hackathon.rezerwuator.user.repository.UserRepository;
 import lombok.AllArgsConstructor;
 

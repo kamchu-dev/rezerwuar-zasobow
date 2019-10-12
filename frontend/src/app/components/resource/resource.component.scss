@@ -1,10 +1,21 @@
-
 .resource-photo {
   background: url("./../../../assets/images/book_cover.jpg");
   background-size: cover;
   height: 500px;
   width: 180px;
   border: 10px gray;
+}
+.item {
+  background: #efefef;
+}
+.back-btn {
+  padding: 10px 20px;
+  margin-left: 0px !important;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  letter-spacing: 2px;
+  font-size: 18px;
+  color: #ff6200;
 }
 
 .mt-20 {
@@ -31,7 +42,7 @@
 }
 
 .container {
-  background: #efefef;
+
 }
 
 i.active {
@@ -47,7 +58,8 @@ mat-form-field {
 }
 
 .reservation-bar {
-
+  display: flex;
+  align-items: center;
 }
 
 .buttons {

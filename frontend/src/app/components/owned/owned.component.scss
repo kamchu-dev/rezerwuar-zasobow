@@ -1,0 +1,28 @@
+:host {
+  width: 80%;
+  display: block;
+  margin-left: 10%;
+  
+  table {
+    width: 100%;
+    .mat-row {
+      &:hover {
+        background-color: #ff6200;
+        transition: 0.3s background-color;
+        cursor: pointer;
+        .mat-cell {
+          color: white !important;
+        }
+      }
+    }
+  }
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  td, th {
+    width: 25%;
+  }
+}

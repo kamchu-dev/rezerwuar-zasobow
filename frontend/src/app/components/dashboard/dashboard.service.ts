@@ -11,6 +11,7 @@ import { map } from 'rxjs/operators';
 export class DashboardService {
 
     private resourcesUrl: string = '/api/resources';
+    private myResourcesUrl: string = '/api/rent/user/1';
 
     constructor(private httpClient: HttpClient) {
 
@@ -19,6 +20,16 @@ export class DashboardService {
     public getResources(): Observable<ResourceModel[]> {
         return this.httpClient
                    .get(environment.serverPath + this.resourcesUrl)
+                   .pipe(
+                       map((res: any) => {
+                           return res;
+                       })
+                   );
+    }
+
+    public getMyResources(): Observable<any[]> {
+        return this.httpClient
+                   .get(environment.serverPath + this.myResourcesUrl)
                    .pipe(
                        map((res: any) => {
                            return res;
