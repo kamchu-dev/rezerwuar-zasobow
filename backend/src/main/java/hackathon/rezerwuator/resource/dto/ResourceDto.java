@@ -11,6 +11,7 @@ public class ResourceDto {
     String code;
     String qr;
     Integer likes;
+    String tags;
     boolean isTaken;
     boolean canLike;
 }
