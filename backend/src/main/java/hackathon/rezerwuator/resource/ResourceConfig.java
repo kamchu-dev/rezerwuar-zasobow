@@ -20,18 +20,16 @@ public class ResourceConfig {
         ArrayList<ResourceDto> resourceDtos = new ArrayList<>();
         resourceDtos.add(new ResourceDto("Żemeł Jest Super",
                 "Wcale tego sam nie napisał",
-                "stalykod", UUID.randomUUID().toString(), 5, Arrays.asList("Żemeł tego nie pisał","Fajność","Klasa","Szyk"), true,false
+                "stalykod", UUID.randomUUID().toString(),  Arrays.asList("Żemeł tego nie pisał","Fajność","Klasa","Szyk"), true
                 ));
         resourceDtos.add(new ResourceDto("Somsiedzi",
                 "miejsce 4 jest pewne",
                 UUID.randomUUID().toString(), UUID.randomUUID().toString(),
-                5,
                 Arrays.asList("Winners","Somsiedzi","Jak Już Co Robić To Bylejak"),
-                false,
                 false));
         resourceDtos.add(new ResourceDto("Nowa książka somsiada",
                 "Ciekawe skąd miał pieniążki",
-                UUID.randomUUID().toString(), UUID.randomUUID().toString(), 5,Arrays.asList("Niepewność","UprzejmieDonosze"), false, true));
+                UUID.randomUUID().toString(), UUID.randomUUID().toString(), Arrays.asList("Niepewność","UprzejmieDonosze"), false));
 
         resourceDtos.forEach( resource -> resourceFacade.addResource(resource.getName(), resource.getDescription(), resource.getQr(),resource.getTags()));
 
