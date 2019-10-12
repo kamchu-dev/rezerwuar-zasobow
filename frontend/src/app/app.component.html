@@ -1,11 +1,10 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="toolbar">
   <mat-toolbar-row>
     <h1>Rezerwuar</h1>
     <span class="menu-spacer"></span>
     <div>
-      <a mat-button [routerLink]="'/'"> Rent resource </a>
-      <a mat-button [routerLink]="'/'"> Wishlist </a>
-
+      <a class="btn-nav" mat-button [routerLink]="'/rent'" routerLinkActive="active"> Rent resource </a>
+      <a class="btn-nav" mat-button [routerLink]="'/wish-list'" routerLinkActive="active"> Wishlist </a>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
