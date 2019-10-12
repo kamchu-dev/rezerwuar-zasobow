@@ -24,6 +24,11 @@ public class RentController {
         return rentFacade.getAll();
     }
 
+    @GetMapping("/api/rent/user/{userId}")
+    List<RentDto> getRentedByUser(@PathVariable Long userId) {
+        return rentFacade.getRentedByUser(userId);
+    }
+
     @GetMapping("/api/rent/available")
     List<RentDto> getAvailable() {
         return rentFacade.getByAvailability(false);

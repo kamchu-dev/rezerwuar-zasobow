@@ -33,6 +33,11 @@ public class InMemoryRentRepository implements RentRepository{
     }
 
     @Override
+    public List<Rent> findAllByUserIdAndRentedIsTrue(long userId) {
+        return null;
+    }
+
+    @Override
     public Optional<Rent> findByResourceCodeAndRentedIsTrue(String resourceCode) {
         return rentals.stream().filter(rent -> rent.getResourceCode().equals(resourceCode) && rent.isRented()).findAny();
     }
