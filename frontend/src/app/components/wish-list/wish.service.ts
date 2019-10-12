@@ -4,7 +4,6 @@ import {ResourceModel} from '../../models/resource.model';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {map} from 'rxjs/operators';
-import { WishListModel } from '../../models/wish-list.model';
 
 @Injectable({
   providedIn: 'root'
