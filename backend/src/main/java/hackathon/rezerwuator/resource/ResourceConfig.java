@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.UUID;
 
 @Configuration
@@ -19,18 +20,18 @@ public class ResourceConfig {
         ArrayList<ResourceDto> resourceDtos = new ArrayList<>();
         resourceDtos.add(new ResourceDto("Żemeł Jest Super",
                 "Wcale tego sam nie napisał",
-                "stalykod", UUID.randomUUID().toString(), 5, "Fajność,Klasa,Szyk", true,false
+                "stalykod", UUID.randomUUID().toString(), 5, Arrays.asList("Żemeł tego nie pisał","Fajność","Klasa","Szyk"), true,false
                 ));
         resourceDtos.add(new ResourceDto("Somsiedzi",
                 "miejsce 4 jest pewne",
                 UUID.randomUUID().toString(), UUID.randomUUID().toString(),
                 5,
-                "Winners,Somsiedzi,JakJużCoRobićToByleJak",
+                Arrays.asList("Winners","Somsiedzi","Jak Już Co Robić To Bylejak"),
                 false,
                 false));
         resourceDtos.add(new ResourceDto("Nowa książka somsiada",
                 "Ciekawe skąd miał pieniążki",
-                UUID.randomUUID().toString(), UUID.randomUUID().toString(), 5,"Niepewność,UprzejmieDonosze", false, true));
+                UUID.randomUUID().toString(), UUID.randomUUID().toString(), 5,Arrays.asList("Niepewność","UprzejmieDonosze"), false, true));
 
         resourceDtos.forEach( resource -> resourceFacade.addResource(resource.getName(), resource.getDescription(), resource.getQr(),resource.getTags()));
 

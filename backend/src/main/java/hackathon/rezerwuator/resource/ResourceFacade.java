@@ -51,7 +51,7 @@ public class ResourceFacade {
                 .collect(toList());
     }
 
-    public String addResource(String name, String description, String qr, String tags){
+    public String addResource(String name, String description, String qr, List<String> tags){
         Resource resource = new Resource(name, description,tags, UUID.randomUUID().toString(), qr);
         repository.save(resource);
         return resource.getCode();
