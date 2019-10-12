@@ -14,6 +14,7 @@ import {HeadTitleComponent} from './shared/head-title/head-title.component';
 import {ScannerComponent} from './components/scanner/scanner.component';
 import {MatDialogModule, MatDialogRef} from '@angular/material';
 import {FormsModule} from "@angular/forms";
+import { OwnedComponent } from './components/owned/owned.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {FormsModule} from "@angular/forms";
     ResourceComponent,
     FooterComponent,
     HeadTitleComponent,
-    ScannerComponent
+    ScannerComponent,
+    OwnedComponent
   ],
   imports: [
     BrowserModule,

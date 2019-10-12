@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ResourceModel} from "../../models/resource.model";
 import {ResourceService} from "./resource.service";
 import {ActivatedRoute} from "@angular/router";
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-resource',
@@ -14,7 +15,7 @@ export class ResourceComponent implements OnInit {
   id: string;
   dataSource: ResourceModel;
 
-  constructor(private service: ResourceService, route: ActivatedRoute) {
+  constructor(private service: ResourceService, route: ActivatedRoute, private location: Location) {
     this.id = route.snapshot.params.id;
   }
 
@@ -23,6 +24,10 @@ export class ResourceComponent implements OnInit {
       this.dataSource = res;
       console.log(this.dataSource);
     });
+  }
+
+  onClickBack() {
+    this.location.back();
   }
 
   onClickOrder(code){
