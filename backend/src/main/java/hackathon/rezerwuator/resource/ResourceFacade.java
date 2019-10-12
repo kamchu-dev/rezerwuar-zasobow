@@ -26,6 +26,7 @@ public class ResourceFacade {
                         entity.getCode(),
                         entity.getQr(),
                         5,
+                        entity.getTags(),
                         isRented,
                         canLike))
                 .orElse(null);
@@ -43,6 +44,7 @@ public class ResourceFacade {
                             entity.getCode(),
                             entity.getQr(),
                             5,
+                            entity.getTags(),
                             isRented,
                             canLike);
                 })
@@ -66,6 +68,7 @@ public class ResourceFacade {
                             entity.getCode(),
                             entity.getQr(),
                             5,
+                            entity.getTags(),
                             isRented,
                             canLike);
                 })
