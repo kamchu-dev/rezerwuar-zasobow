@@ -39,4 +39,17 @@ export class WishListComponent implements OnInit {
         console.log('update');
     });
   }
+
+  onUnclickLike(row){
+    this.service.removeLike(row).subscribe(() => {
+      const newObj: WishListModel = {
+        name: row.name,
+        likes: row.likes - 1,
+        url: row.url,
+        price: row.price,
+        canLike: row.canLike
+      };
+      console.log('update');
+    });
+  }
 }
