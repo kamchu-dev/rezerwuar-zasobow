@@ -4,7 +4,7 @@
   background-size: cover;
   height: 500px;
   width: 180px;
-  border: 10px whitesmoke;
+  border: 10px gray;
 }
 
 .mt-20 {
@@ -18,6 +18,10 @@
 
 .resource-description {
   padding-top: 20px;
+}
+
+.resource-info {
+  padding: 30px;
 }
 
 .score {
@@ -34,9 +38,23 @@ i.active {
   color: darkorange;
 }
 
-section#resource-actions button {
+#resource-actions button {
   margin: 10px;
 }
 
+mat-form-field {
+  margin: 10px;
+}
+
+.reservation-bar {
+
+}
+
+.buttons {
+  padding-top: 16px;
+}
+
 button {
+  margin-left: 10px;
+  float: right;
 }
