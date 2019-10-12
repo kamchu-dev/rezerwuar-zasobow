@@ -10,18 +10,18 @@ import { map } from 'rxjs/operators';
 })
 export class DashboardService {
 
-    private resourcesUrl: string = '/resources';
+    private resourcesUrl: string = '/api/resources';
 
     constructor(private httpClient: HttpClient) {
 
     }
 
-    public getResources(): Observable<ResourceModel> {
+    public getResources(): Observable<ResourceModel[]> {
         return this.httpClient
                    .get(environment.serverPath + this.resourcesUrl)
                    .pipe(
                        map((res: any) => {
-                           return res.product;
+                           return res;
                        })
                    );
     }
