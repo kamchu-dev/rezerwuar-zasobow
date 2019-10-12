@@ -27,6 +27,7 @@ class LikeController {
 
     @PostMapping("/api/like")
     String reserve(LikeDto likeDto){
-        return reservationFacade.like(likeDto.getUserId(), likeDto.getResourceCode());
+         reservationFacade.like(likeDto.getUserId(), likeDto.getResourceCode());
+         return "{}";
     }
 }
