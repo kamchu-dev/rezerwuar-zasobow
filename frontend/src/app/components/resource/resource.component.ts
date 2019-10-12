@@ -14,10 +14,12 @@ export class ResourceComponent implements OnInit {
 
   id: string;
   dataSource: ResourceModel;
+  showButtons: boolean;
 
   constructor(private service: ResourceService, private snackBar: MatSnackBar, route: ActivatedRoute) {
     this.id = route.snapshot.params.id;
     this.snackBar = snackBar;
+    this.showButtons = true;
   }
 
   ngOnInit() {
@@ -32,6 +34,7 @@ export class ResourceComponent implements OnInit {
       duration: 5000,
       panelClass: ['successful-snackbar']
     });
+    this.showButtons = false;
     this.service.order(code).subscribe(() => {
     });
   }
@@ -41,6 +44,7 @@ export class ResourceComponent implements OnInit {
       duration: 5000,
       panelClass: ['successful-snackbar']
     });
+    this.showButtons = false;
     this.service.reserve(code).subscribe(() => {
     });
   }
