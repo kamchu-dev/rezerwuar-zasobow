@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ResourceModel} from "../../models/resource.model";
+import {ResourceService} from "./resource.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-resource',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResourceComponent implements OnInit {
 
-  constructor() { }
+  id: string;
+  dataSource: ResourceModel;
 
-  ngOnInit() {
+  constructor(private service: ResourceService, route: ActivatedRoute) {
+    this.id = route.snapshot.params.id;
   }
 
+  ngOnInit() {
+    this.service.getResources(this.id).subscribe((res: ResourceModel) => {
+      this.dataSource = res;
+      console.log(this.dataSource);
+    });
+  }
 }

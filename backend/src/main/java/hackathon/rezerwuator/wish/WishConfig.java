@@ -13,7 +13,7 @@ public class WishConfig {
 
     @Bean
     WishFacade getWishFacade(WishRepository repository, LikesFacade likesFacade) {
-        WishFacade resourceFacade = new WishFacade(repository, likesFacade);
+        WishFacade wishFacade = new WishFacade(repository, likesFacade);
         ArrayList<WishDto> resourceDtos = new ArrayList<>();
         resourceDtos.add(new WishDto("Żemeł Jest Super",
                 "Wcale tego sam nie napisał",
@@ -25,8 +25,8 @@ public class WishConfig {
                 "Ciekawe skąd miał pieniążki",
                 UUID.randomUUID().toString(), UUID.randomUUID().toString(), "113.50 $", "https://www.amazon.com/Java-Dummies-Computers-Barry-Burd/dp/1119175690", 5));
 
-        resourceDtos.forEach(resource -> resourceFacade.addResource(resource.getName(), resource.getDescription(), resource.getQr(), "113.50 $", "https://www.amazon.com/Java-Dummies-Computers-Barry-Burd/dp/1119175690"));
+        resourceDtos.forEach(resource -> wishFacade.addResource(resource.getName(), resource.getDescription(), resource.getQr(), "113.50 $", "https://www.amazon.com/Java-Dummies-Computers-Barry-Burd/dp/1119175690"));
 
-        return resourceFacade;
+        return wishFacade;
     }
 }

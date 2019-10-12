@@ -4,6 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { DashboardService } from './dashboard.service';
 import { ResourceModel } from '../../models/resource.model';
+import { Router } from '@angular/router';
+import quagga from 'quagga/dist/quagga';
 
 @Component({
     selector: 'app-dashboard',
@@ -13,12 +15,14 @@ import { ResourceModel } from '../../models/resource.model';
 export class DashboardComponent implements OnInit {
 
     displayedColumns: string[] = ['name', 'code', 'likes'];
+    public guagga: any;
     dataSource: MatTableDataSource<ResourceModel>;
 
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
     @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-    constructor(private service: DashboardService) {
+    constructor(private service: DashboardService, private router: Router) {
+        this.guagga = quagga;
     }
 
     ngOnInit() {
@@ -35,7 +39,8 @@ export class DashboardComponent implements OnInit {
             this.dataSource.paginator.firstPage();
         }
     }
-    onClickLike(){
 
+    public onClickRow(row): void {
+        this.router.navigate(['/resource/' + row.code]);
     }
 }

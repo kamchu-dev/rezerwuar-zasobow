@@ -3,4 +3,14 @@
   bottom: 0px;
   background-color: lightgray;
   width: 100%;
+  height: 50px;
+  padding: 10px 0;
+
+  .ing-logo {
+    background: url("../../../assets/images/ing-logo.png");
+    background-size: cover;
+    height: 30px;
+    width: 40px;
+    margin: 0 40px 0 10%;
+  }
 }

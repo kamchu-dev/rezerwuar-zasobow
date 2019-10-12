@@ -39,7 +39,7 @@ public class RentFacade {
         if(Objects.isNull(resourceFacade.getResource(resourceCode))){
             throw new RuntimeException(String.format("No resource with code %s", resourceCode));
         }
-        Rent rent = rentRepository.findByResourceCodeAndRentedIsFalse(resourceCode)
+        Rent rent = rentRepository.findByResourceCodeAndRentedIsTrue(resourceCode)
                 .orElseThrow(() -> new RuntimeException(String.format("Could not find Rent for resource%s", resourceCode)));
         rent.returnResource();
     }
