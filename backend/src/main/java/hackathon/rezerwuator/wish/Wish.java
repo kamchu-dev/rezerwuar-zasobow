@@ -19,4 +19,5 @@ class Wish {
     String qr;
     String money;
     String url;
+    boolean canLike;
 }
