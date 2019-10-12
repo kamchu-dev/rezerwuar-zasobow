@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -15,7 +16,7 @@ import javax.persistence.Id;
 class Resource {
     String name;
     String description;
-    String tags;
+    List<String> tags;
     @Id
     String code;
     String qr;
