@@ -36,7 +36,7 @@ public class ReservationFacadeTest {
     }
 
     @Test
-    public void getAll() {
+    public void shouldReserve() {
         //given
         Long userId = 1L;
         String resourceCode = UUID.randomUUID().toString();
@@ -51,5 +51,22 @@ public class ReservationFacadeTest {
         assertEquals(1, reservations.size());
         assertEquals(resourceCode, reservations.get(0).getResourceCode());
         assertEquals(userId, reservations.get(0).getUserId());
+    }
+
+    @Test
+    public void shouldCancelReservations() {
+        //given
+        Long userId = 1L;
+        String resourceCode = UUID.randomUUID().toString();
+        when(userRepository.findById(Mockito.eq(userId))).thenReturn(Optional.of(new User()));
+        when(resourceFacade.getResource(Mockito.eq(resourceCode))).thenReturn(new ResourceDto(null, null, resourceCode, null));
+        reservationFacade.reserve(userId, resourceCode);
+
+        //when
+        reservationFacade.cancelReservation(userId, resourceCode);
+
+        //then
+        List<ReservationDto> reservations = reservationFacade.getAll(resourceCode);
+        assertEquals(0, reservations.size());
     }
 }

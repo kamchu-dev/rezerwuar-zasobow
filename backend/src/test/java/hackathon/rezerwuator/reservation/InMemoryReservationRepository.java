@@ -16,7 +16,8 @@ public class InMemoryReservationRepository implements ReservationRepository{
     private Set<Reservation> reservations = new HashSet<>();
     @Override
     public List<Reservation> deleteByResourceCodeAndUserId(String resourceCode, Long userId) {
-        return null;
+        reservations.removeIf(reservation -> reservation.getResourceCode().equals(resourceCode) && reservation.getUserId().equals(userId));
+        return new ArrayList(reservations);
     }
 
     @Override
