@@ -25,4 +25,15 @@ export class ResourceService {
         })
       );
   }
+
+
+  public getScore(id: string): Observable<ResourceModel> {
+    return this.httpClient
+      .get(environment.serverPath + this.resourcesUrl + id )
+      .pipe(
+        map((res: any) => {
+          return res;
+        })
+      );
+  }
 }

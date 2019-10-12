@@ -1,6 +1,7 @@
 .toolbar {
   background-color: white;
   border-bottom: 1px solid gray;
+
   .mat-toolbar-row {
     height: 85px !important;
     padding: 0 !important;
@@ -11,6 +12,7 @@
   letter-spacing: 2px;
   font-size: 18px;
   color: #ff6200;
+
   &.active {
     border-bottom: 1px solid #ff6200;
     border-bottom-left-radius: 0px;
@@ -25,4 +27,27 @@
   height: 55px;
   width: 260px;
   margin: 0 40px 0 10%;
+}
+
+.fixed-scanner {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222222;
+  color: white;
+  transition: transform .6s ease-in-out, background-color .35s ease-in-out;
+  position: fixed;
+  bottom: 5%;
+  right: 2%;
+
+}
+
+.fixed-scanner:hover{
+  font-size: 64px;
+  background-color: darkorange;
+  transform:rotate(225deg);
+  cursor: pointer;
 }
