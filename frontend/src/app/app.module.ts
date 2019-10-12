@@ -16,6 +16,7 @@ import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatDialogModule, MatDialogRef, MatSnackBa
 import {FormsModule} from "@angular/forms";
 import { OwnedComponent } from './components/owned/owned.component';
 import {SuccessfulComponent} from "./components/successful/successful.component";
+import { AddWishComponent } from './components/add-wish/add-wish.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {SuccessfulComponent} from "./components/successful/successful.component"
     HeadTitleComponent,
     ScannerComponent,
     OwnedComponent,
-    SuccessfulComponent
+    SuccessfulComponent,
+    AddWishComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,6 @@ import {SuccessfulComponent} from "./components/successful/successful.component"
     useClass: PathLocationStrategy
   }],
   bootstrap: [AppComponent],
-  entryComponents: [ScannerComponent, SuccessfulComponent]
+  entryComponents: [ScannerComponent, AddWishComponent, SuccessfulComponent]
 })
 export class AppModule { }

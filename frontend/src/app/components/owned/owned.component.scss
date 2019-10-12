@@ -2,7 +2,9 @@
   width: 80%;
   display: block;
   margin-left: 10%;
-  
+
+
+
   table {
     width: 100%;
     .mat-row {
@@ -25,4 +27,28 @@
   td, th {
     width: 25%;
   }
+}
+
+.round-button {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+}
+.fixed-scanner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222222;
+  color: white;
+  transition: transform .6s ease-in-out, background-color .35s ease-in-out;
+  position: fixed;
+  bottom: 5%;
+  right: 2%;
+  z-index: 9999;
+}
+.fixed-scanner:hover {
+  font-size: 64px;
+  background-color: darkorange;
+  transform: rotate(225deg);
+  cursor: pointer;
 }
