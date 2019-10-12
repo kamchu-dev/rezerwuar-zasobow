@@ -4,13 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @AllArgsConstructor
 @Getter
 public class RentDto {
+    String id;
     String resourceCode;
     Long userId;
-    Date rentDate;
-    Date untilDate;
+    LocalDateTime rentDate;
+    LocalDateTime untilDate;
+    boolean rented;
 }
