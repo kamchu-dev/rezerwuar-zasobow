@@ -34,7 +34,7 @@ public class RentFacadeTest {
     }
 
     @Test
-    public void should(){
+    public void shouldRent(){
         //given
         long userId = 1L;
         String resourceCode = UUID.randomUUID().toString();
@@ -48,6 +48,24 @@ public class RentFacadeTest {
         //then
         boolean rented = rentFacade.isRented(resourceCode);
         assertTrue(rented);
+
+    }
+
+    @Test
+    public void shouldReturnRentedResource(){
+        //given
+        long userId = 1L;
+        String resourceCode = UUID.randomUUID().toString();
+        when(userRepository.findById(Mockito.eq(userId))).thenReturn(Optional.of(new User()));
+        when(resourceFacade.getResource(Mockito.eq(resourceCode))).thenReturn(new ResourceDto(null, null, resourceCode, null));
+        rentFacade.rent(resourceCode, userId);
+
+        //when
+        rentFacade.returnRentedResource(resourceCode);;
+
+        //then
+        boolean rented = rentFacade.isRented(resourceCode);
+        assertFalse(rented);
 
     }
 }
