@@ -1,8 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ResourceModel} from "../../models/resource.model";
-import {MatPaginator, MatSnackBar, MatSort, MatTableDataSource} from "@angular/material";
-import {WishService} from "./wish.service";
-import {SuccessfulComponent} from "../successful/successful.component";
+import {ResourceModel} from '../../models/resource.model';
+import {MatPaginator, MatSnackBar, MatSort, MatTableDataSource} from '@angular/material';
+import {WishService} from './wish.service';
+import {SuccessfulComponent} from '../successful/successful.component';
 
 @Component({
   selector: 'app-wish-list',
