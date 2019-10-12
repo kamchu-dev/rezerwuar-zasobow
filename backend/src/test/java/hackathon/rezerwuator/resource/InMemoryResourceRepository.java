@@ -135,4 +135,10 @@ public class InMemoryResourceRepository implements ResourceRepository{
     public <S extends Resource> boolean exists(Example<S> example) {
         return false;
     }
+
+    @Override
+    public Optional<Resource> findByQr(String qr) {
+        return resources.stream().filter( resource -> resource.getQr().equals(qr)).findAny();
+
+    }
 }

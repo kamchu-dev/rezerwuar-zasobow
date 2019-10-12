@@ -49,5 +49,18 @@ public class ResourceFacadeTest {
         assertEquals(code, resources.get(0).getCode());
     }
 
+    @Test
+    public void shouldReturnByQr() {
+        //given
+        String code = facade.addResource("Test", "Tres", UUID.randomUUID().toString());
+        String createdQr = facade.getResource(code).getQr();
+
+        //when
+        ResourceDto resource = facade.getResourceByQr(createdQr);
+        //then
+
+        assertEquals(createdQr, resource.getQr());
+    }
+
 
 }
