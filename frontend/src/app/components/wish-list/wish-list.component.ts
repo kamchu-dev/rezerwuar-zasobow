@@ -2,7 +2,6 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {ResourceModel} from "../../models/resource.model";
 import {MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
 import {WishService} from "./wish.service";
-import { WishListModel } from '../../models/wish-list.model';
 
 @Component({
   selector: 'app-wish-list',
@@ -28,15 +27,24 @@ export class WishListComponent implements OnInit {
   }
 
   onClickLike(row){
+    if (!row.canLike){
+      return;
+    }
     this.service.addLike(row).subscribe(() => {
-        const newObj: WishListModel = {
+        const newObj: ResourceModel = {
           name: row.name,
           likes: row.likes + 1,
           url: row.url,
           price: row.price,
           canLike: row.canLike
         };
-        console.log('update');
+      this.dataSource.data.map((obj) => {
+        if(obj.code == row.code){
+          obj.likes++;
+          obj.canLike = !obj.canLike;
+        }
+      });
+      console.dir(this.dataSource);
     });
   }
 }

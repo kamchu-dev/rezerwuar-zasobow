@@ -22,13 +22,16 @@
 
   .material-icons {
     user-select: none;
+    margin-top: 3px;
+    margin-right: 3px;
     &:hover {
       color: #ff6200;
       transition: 0.2s all;
       cursor: pointer;
     }
-    &.active {
-      color: blue;
+    &.inactive {
+      color: gray;
+      cursor: default;
     }
   }
 }

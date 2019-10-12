@@ -7,6 +7,7 @@ import {ActivatedRoute} from "@angular/router";
   selector: 'app-resource',
   templateUrl: './resource.component.html',
   styleUrls: ['./resource.component.scss']
+
 })
 export class ResourceComponent implements OnInit {
 
