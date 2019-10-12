@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 public class RentFacade {
     private RentFactory rentFactory;
     private RentRepository rentRepository;
-    private ResourceFacade resourceFacade;
 
     public List<RentDto> getAll(){
         return rentRepository.findAll()
@@ -36,9 +35,9 @@ public class RentFacade {
     }
 
     public void returnRentedResource(String resourceCode){
-        if(Objects.isNull(resourceFacade.getResource(resourceCode))){
+ /*       if(Objects.isNull(resourceFacade.getResource(resourceCode))){
             throw new RuntimeException(String.format("No resource with code %s", resourceCode));
-        }
+        }*/
         Rent rent = rentRepository.findByResourceCodeAndRentedIsTrue(resourceCode)
                 .orElseThrow(() -> new RuntimeException(String.format("Could not find Rent for resource%s", resourceCode)));
         rent.returnResource();

@@ -7,12 +7,12 @@ import org.springframework.context.annotation.Bean;
 public class RentConfiguration {
 
     @Bean
-    RentFacade getRentFacade(RentFactory rentFactory, RentRepository rentRepository, ResourceFacade resourceFacade){
-        return new RentFacade(rentFactory, rentRepository, resourceFacade);
+    RentFacade getRentFacade(RentFactory rentFactory, RentRepository rentRepository){
+        return new RentFacade(rentFactory, rentRepository);
     }
 
     @Bean
-    RentFactory getRentFactory(RentRepository rentRepository, UserRepository userRepository, ResourceFacade resourceFacade){
-        return new RentFactory(rentRepository, userRepository, resourceFacade);
+    RentFactory getRentFactory(RentRepository rentRepository, UserRepository userRepository){
+        return new RentFactory(rentRepository, userRepository);
     }
 }
