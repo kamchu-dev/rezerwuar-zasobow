@@ -2,29 +2,30 @@
   <div class="row">
 
     <div class="col-md-4 resource-photo"></div>
+
     <div class="col-md-8">
       <div class="row">
         <h1>{{ dataSource.name }}</h1>
       </div>
 
       <div class="row resource-summary">
-          <div class="col-md-12">
-            <i class="material-icons active">
-              stars
-            </i>
-            <i class="material-icons active">
-              stars
-            </i>
-            <i class="material-icons active">
-              stars
-            </i>
-            <i class="material-icons">
-              stars
-            </i>
-            <i class="material-icons">
-              stars
-            </i>
-          </div>
+        <div class="col-md-12">
+          <i class="material-icons active">
+            stars
+          </i>
+          <i class="material-icons active">
+            stars
+          </i>
+          <i class="material-icons active">
+            stars
+          </i>
+          <i class="material-icons">
+            stars
+          </i>
+          <i class="material-icons">
+            stars
+          </i>
+        </div>
         <hr>
         <div class="col-md-12"><b>Code:</b> {{ dataSource.code }}</div>
         <div class="col-md-12"><b>ISBN:</b> {{ dataSource.description }}</div>
@@ -33,17 +34,28 @@
       </div>
       <div class="row resource-description">
         <div class="col-md-12">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod velit viverra semper facilisis.
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod velit viverra semper
+            facilisis.
             Morbi ultricies interdum ante eleifend vehicula. Phasellus in lectus sollicitudin, consequat turpis a,
             tristique massa. Proin orci arcu, porta ac maximus a, tincidunt vel nunc. Praesent vitae ipsum cursus,
             consectetur nibh finibus, gravida turpis. Proin a gravida orci. Fusce mi leo, rhoncus vel massa et, sagittis
-            tincidunt quam. Suspendisse molestie mi id maximus egestas. Etiam suscipit nunc a pretium aliquet. Ut sit amet
+            tincidunt quam. Suspendisse molestie mi id maximus egestas. Etiam suscipit nunc a pretium aliquet. Ut sit
+            amet
             nunc eu tellus feugiat tempor. Aliquam at metus sed urna commodo malesuada eu quis lacus.</p>
         </div>
       </div>
 
     </div>
-
+    <section id="resource-actions">
+      <div class="row">
+        <div class="col-md-12">
+          <button id="reserve-button" class="btn btn-secondary btn-lg">
+            Make a reservation
+          </button>
+          <button id="borrow-button" class="btn btn-success btn-lg">Borrow now</button>
+        </div>
+      </div>
+    </section>
   </div>
 
 

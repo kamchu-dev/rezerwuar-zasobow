@@ -4,6 +4,7 @@
   background-size: cover;
   height: 500px;
   width: 180px;
+  border: 10px whitesmoke;
 }
 
 .mt-20 {
@@ -31,4 +32,11 @@
 
 i.active {
   color: darkorange;
+}
+
+section#resource-actions button {
+  margin: 10px;
+}
+
+button {
 }
